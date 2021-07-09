@@ -1,0 +1,17 @@
+General Structure:
+
+    JKLConfig - config object to load configurations for different providers (tokens etc).
+    JKLGlobals - holds global session data such as available provider objects.
+    JKLAPI - framework for provider-based operations.
+
+    plugins - plugin package for different provider types.
+    JKLogging - Universal Logging Engine
+
+
+so basically, you init the api, you set up providers through it, those do everything they need to get a token and all that
+then, you perform high-level operations based on the storage object globally available
+
+responses are passed to a response handler in the api... so a status thats given as 401 (unauthorized) would be passed to
+the handler for that operation.
+TODO: Get all responses from the api documentation and handle them.
+
